@@ -3,7 +3,7 @@
   <%- include('./partials/head') %>
   <body>
     <%- include('./partials/nav.ejs') %>
-    <div class="blogs-list">
+    <div class="blogs-list content">
       <h1>Blogs</h1>
       <% if (blogs.length > 0) {%> <% blogs.map(blog => { %>
       <h3 class="blog-title"><%= blog.title %></h3>
