@@ -4,13 +4,29 @@ const port = 3000;
 
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => res.render("index"));
+app.get("/", (req, res) => {
+  const blogs = [
+    {
+      title: "How I got into Web Development",
+      body: "blbalbalblalbalblablalblablb"
+    },
+    {
+      title: "My Life as a software developers",
+      body: "blbalbalblalbalblablalblablb"
+    },
+    {
+      title: "How to monetize Youtube",
+      body: "blbalbalblalbalblablalblablb"
+    }
+  ];
+  res.render("index", { title: "| Home", blogs});
+});
 
-app.get("/about", (req, res) => res.render("about"));
+app.get("/about", (req, res) => res.render("about", { title: "| About" }));
 
 app.get("/blogs/create", (req, res) => {
-  res.render("createNewBlog");
-})
+  res.render("createNewBlog", { title: "| Create a Blog" });
+});
 
 app.use((req, res) => res.status(404).render("404"));
 

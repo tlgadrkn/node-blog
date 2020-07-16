@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Blog</title>
-  </head>
+  <%- include('./partials/head') %>
   <body>
-    <nav>
-      <div class="title">
-        <a href="/">Node Blog</a>
-        <p>Made by &#10084;</p>
-      </div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blogs/create">Create New Blog</a></li>
-      </ul>
-    </nav>
-
+    <%- include('./partials/nav.ejs') %>
     <div class="blogs-list">
-      <h2>Blogs</h2>
+      <h1>Blogs</h1>
+      <% if (blogs.length > 0) {%> <% blogs.map(blog => { %>
+      <h3 class="blog-title"><%= blog.title %></h3>
+      <p class="blog-body"><%= blog.body %></p>
+      <% }) %> <% } else { %>
+      <p>There are no blogs created.</p>
+      <% } %>
     </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>

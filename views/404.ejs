@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page Not Found</title>
-</head>
-<body>
-    <nav>
-        <div class="title">
-          <a href="/">Node Blog</a>
-          <p>Made by &#10084;</p>
-        </div>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/blogs/create">Create New Blog</a></li>
-        </ul>
-      </nav>
-  
-      <div class="container 404">
-        <h2>Page Not Found</h2>
-      </div>
-</body>
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container 404">
+      <h2>Page Not Found</h2>
+    </div>
+    <%- include('./partials/footer') %>
+  </body>
 </html>

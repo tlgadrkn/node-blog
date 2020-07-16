@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Blog</title>
-  </head>
+  <%- include('./partials/head') %>
+
   <body>
-    <nav>
-      <div class="title">
-        <a href="/">Node Blog</a>
-        <p>Made by &#10084;</p>
-      </div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blogs/create">Create New Blog</a></li>
-      </ul>
-    </nav>
+    <%- include('./partials/nav.ejs') %>
 
     <div class="create-blog content">
-        <form>
-            <label for="title">Blog Title:</label>
-            <input type="text" id="title" required>
-            <label for="snippet">Blog Snippet:</label>
-            <input type="text" id="snippet" required>
-            <label for="body">Blog Body:</label>
-            <textarea type="text" id="body"></textarea>
-            <button>Create Blog</button>
-        </form>
+      <form>
+        <label for="title">Blog Title:</label>
+        <input type="text" id="title" required />
+        <label for="snippet">Blog Snippet:</label>
+        <input type="text" id="snippet" required />
+        <label for="body">Blog Body:</label>
+        <textarea type="text" id="body"></textarea>
+        <button>Create Blog</button>
+      </form>
       <h2>Blogs</h2>
     </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>
